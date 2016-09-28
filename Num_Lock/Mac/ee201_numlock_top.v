@@ -26,16 +26,18 @@ module ee201_numlock_top (
 		An3, An2, An1, An0,			       // 4 anodes
 		Ca, Cb, Cc, Cd, Ce, Cf, Cg,        // 7 cathodes
 		Dp                                 // Dot Point Cathode on SSDs
+		
+		BtnC, BtnL, BtnR					//reset, U, Z
 	  );
 
 
 	/*  INPUTS */
 	// Clock & Reset I/O
 	input		ClkPort;	
-// TODO: DEFINE THE INPUTS (buttons and switches) you need for this project
+// TODO: DEFINE THE INPUTS (buttons and switches) you need for this project - done
 // make sure to add those to the ee201_numlock_top PORT list also!	
 	// Project Specific Inputs
-	input		;	
+	input	Clk, reset, U, Z;	
 	
 	
 	
@@ -98,15 +100,15 @@ module ee201_numlock_top (
 	// Our clock is too fast (100MHz) for SSD scanning
 	// create a series of slower "divided" clocks
 	// each successive bit is 1/2 frequency
-// TODO: create the sensitivity list
-	always @ ()  
+// TODO: create the sensitivity list - done
+	always @ (posedge board_clk, posedge reset)  
 	begin : CLOCK_DIVIDER
       if (reset)
 			DIV_CLK <= 0;
       else
+      		DIV_CLK <= DIV_CLK + 1'b1;
 			// just incrementing makes our life easier
-// TODO: add the incrementer code
-			;
+// TODO: add the incrementer code - done
 	end		
 //------------	
 	// pick a divided clock bit to assign to system clock
@@ -119,8 +121,8 @@ module ee201_numlock_top (
 	// BtnL/BtnR is abstract
 	// let's form some wire aliases with easier naming (U and Z, for UNO and ZERO) 
 
-// TODO: add the lines to assign your I/O inputs to U and Z
-	assign {U,Z} = /* */;
+// TODO: add the lines to assign your I/O inputs to U and Z - done
+	assign {U,Z} = {BtnL, BtnR};
 	
 	
 	// switches used to send the value of a specific state to LD6
@@ -133,10 +135,10 @@ module ee201_numlock_top (
 
 	
 	ee201_numlock_sm SM1(.Clk(sys_clk), .reset(reset), 
-								.q_I(q_I), 
-
-								);		
-// TODO: finish the port list
+								.q_I(q_I), .q_G1get(q_G1get), .q_G1(q_G1), .q_G10get(.q_G10get),
+								.q_G10(q_G10), .q_G101get(q(G101get), .q_G101(q_G101), 
+								.q_G1011get(.q_G1011get), .q_G1011(q_G1011), .q_Opening(q_Opening), .q_Bad(q_Bad));		
+// TODO: finish the port list - done
 // make sure you are following the naming scheme above
 								
 	
@@ -160,7 +162,17 @@ module ee201_numlock_top (
 		case ( {q_I, q_G1get, q_G1, q_G10get, q_G10, q_G101get, q_G101, q_G1011get, q_G1011, q_Opening, q_Bad} )		
 
 // TODO: complete the 1-hot encoder	
-
+			11'b00000000001: state_num = 'QI_NUM;
+			11'b00000000010: state_num = 'QG1GET_NUM;
+			11'b00000000100: state_num = 'QG1_NUM;
+			11'b00000001000: state_num = 'QG10GET_NUM;
+			11'b00000010000: state_num = 'QG10_NUM;
+			11'b00000100000: state_num = 'QG101GET_NUM;
+			11'b00001000000: state_num = 'QG101_NUM;
+			11'b00010000000: state_num = 'QG1011GET_NUM;
+			11'b00100000000: state_num = 'QG1011_NUM;
+			11'b01000000000: state_num = 'QOPENING_NUM;
+			11'b10000000000: state_num = 'QBAD_NUM;
 		endcase
 	end
 	
@@ -176,7 +188,7 @@ module ee201_numlock_top (
 	always @ (q_I, q_G1get, q_G1, q_G10get, q_G10, q_G101get, q_G101, q_G1011get, q_G1011, q_Opening, q_Bad)
 	begin
 	// TODO: finish the logic for state_sum
-		state_sum =     ;
+		state_sum = Ld7 + Ld6 + Ld5 + Ld4;
 	end
 	
 	// we could do the following with an assign statement also. 
