@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////////
-// Author:			Brandon Franzke, Gandhi Puvvada, Bilal Zafar
+// Author:			Danny Pan, Mackenzie Collins
 // Create Date:		02/17/2008, 2/6/2012 
 // File Name:		ee201_numlock_top.v [EXERCISE given to studnents]
 // Description: 
@@ -25,18 +25,19 @@ module ee201_numlock_top (
 		Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0, // 8 LEDs
 		An3, An2, An1, An0,			       // 4 anodes
 		Ca, Cb, Cc, Cd, Ce, Cf, Cg,        // 7 cathodes
-		Dp,                                 // Dot Point Cathode on SSDs
-		BtnL, BtnC, BtnR
+		Dp                                 // Dot Point Cathode on SSDs
+		
+		BtnC, BtnL, BtnR					//reset, U, Z
 	  );
 
 
 	/*  INPUTS */
 	// Clock & Reset I/O
 	input		ClkPort;	
-// TODO: DEFINE THE INPUTS (buttons and switches) you need for this project
+// TODO: DEFINE THE INPUTS (buttons and switches) you need for this project - done
 // make sure to add those to the ee201_numlock_top PORT list also!	
 	// Project Specific Inputs
-	input		;	
+	input	Clk, reset, U, Z;	
 	
 	
 	
@@ -99,15 +100,15 @@ module ee201_numlock_top (
 	// Our clock is too fast (100MHz) for SSD scanning
 	// create a series of slower "divided" clocks
 	// each successive bit is 1/2 frequency
-// TODO: create the sensitivity list
-	always @ ()  
+// TODO: create the sensitivity list - done
+	always @ (posedge board_clk, posedge reset)  
 	begin : CLOCK_DIVIDER
       if (reset)
 			DIV_CLK <= 0;
       else
+      		DIV_CLK <= DIV_CLK + 1'b1;
 			// just incrementing makes our life easier
-// TODO: add the incrementer code
-			;
+// TODO: add the incrementer code - done
 	end		
 //------------	
 	// pick a divided clock bit to assign to system clock
@@ -120,7 +121,7 @@ module ee201_numlock_top (
 	// BtnL/BtnR is abstract
 	// let's form some wire aliases with easier naming (U and Z, for UNO and ZERO) 
 
-// TODO: add the lines to assign your I/O inputs to U and Z
+// TODO: add the lines to assign your I/O inputs to U and Z - done
 	assign {U,Z} = {BtnL, BtnR};
 	
 	
@@ -134,10 +135,10 @@ module ee201_numlock_top (
 
 	
 	ee201_numlock_sm SM1(.Clk(sys_clk), .reset(reset), 
-								.q_I(q_I), 
-
-								);		
-// TODO: finish the port list
+								.q_I(q_I), .q_G1get(q_G1get), .q_G1(q_G1), .q_G10get(.q_G10get),
+								.q_G10(q_G10), .q_G101get(q(G101get), .q_G101(q_G101), 
+								.q_G1011get(.q_G1011get), .q_G1011(q_G1011), .q_Opening(q_Opening), .q_Bad(q_Bad));		
+// TODO: finish the port list - done
 // make sure you are following the naming scheme above
 								
 	
@@ -161,7 +162,17 @@ module ee201_numlock_top (
 		case ( {q_I, q_G1get, q_G1, q_G10get, q_G10, q_G101get, q_G101, q_G1011get, q_G1011, q_Opening, q_Bad} )		
 
 // TODO: complete the 1-hot encoder	
-
+			11'b00000000001: state_num = `QI_NUM;
+			11'b00000000010: state_num = `QG1GET_NUM;
+			11'b00000000100: state_num = `QG1_NUM;
+			11'b00000001000: state_num = `QG10GET_NUM;
+			11'b00000010000: state_num = `QG10_NUM;
+			11'b00000100000: state_num = `QG101GET_NUM;
+			11'b00001000000: state_num = `QG101_NUM;
+			11'b00010000000: state_num = `QG1011GET_NUM;
+			11'b00100000000: state_num = `QG1011_NUM;
+			11'b01000000000: state_num = `QOPENING_NUM;
+			11'b10000000000: state_num = `QBAD_NUM;
 		endcase
 	end
 	
@@ -177,7 +188,7 @@ module ee201_numlock_top (
 	always @ (q_I, q_G1get, q_G1, q_G10get, q_G10, q_G101get, q_G101, q_G1011get, q_G1011, q_Opening, q_Bad)
 	begin
 	// TODO: finish the logic for state_sum
-		state_sum =     ;
+		state_sum = {q_I, q_G1get, q_G1, q_G10get, q_G10, q_G101get, q_G101, q_G1011get, q_G1011, q_Opening, q_Bad};
 	end
 	
 	// we could do the following with an assign statement also. 
@@ -222,9 +233,9 @@ module ee201_numlock_top (
 // SSD (Seven Segment Display)
 
 // TODO: finish the assignment for SSD3, SSD2, SSD1	
-	assign SSD3 =    ;
-	assign SSD2 =    ;
-	assign SSD1 =    ;
+	assign SSD3 = (2**state_num)/(16**2);
+	assign SSD2 = (2**state_num)/(16);
+	assign SSD1 = (2**state_num)%16;
 	assign SSD0 = state_num;
 	
 	
@@ -262,7 +273,10 @@ module ee201_numlock_top (
 		case (ssdscan_clk) 
 		
 // TODO: finish the multiplexor to scan through SSD0-SSD3 with ssdscan_clk[1:0]
-
+		2'b00: SSD = SSD0;
+		2'b01: SSD = SSD1;
+		2'b10: SSD = SSD2;
+		2'b11: SSD = SSD3;
 		endcase 
 	end	
 	
@@ -271,14 +285,23 @@ module ee201_numlock_top (
 // TODO: write the code to enable "blinking"
 	// we want the CATHODES to turn "on-off-on-off" with system clock
 	// while we are in state: OPENING
-	assign SSD_CATHODES_blinking = /*  */ | ( {7{/* */ & /*  */}} );
-	assign {Ca, Cb, Cc, Cd, Ce, Cf, Cg, Dp} = /*    */;
+	assign SSD_CATHODES_blinking = SSD_CATHODES | ( {7{q_Opening & ~sys_clk}} );
+	assign {Ca, Cb, Cc, Cd, Ce, Cf, Cg, Dp} = {SSD_CATHODES_blinking, 1'b1};
 
 	// Following is Hex-to-SSD conversion. Even though
 	always @ (SSD) 
 	begin : HEX_TO_SSD
 		case (SSD)
 // TODO: write cases for 0-9
+			4'b0001: SSD_CATHODES = 7'b0000001 ; // 1
+			4'b0010: SSD_CATHODES = 7'b0001111 ; // 2
+			4'b0011: SSD_CATHODES = 7'b0010010 ; // 3
+			4'b0100: SSD_CATHODES = 7'b0000110 ; // 4
+			4'b0101: SSD_CATHODES = 7'b0100100 ; // 5
+			4'b0110: SSD_CATHODES = 7'b0100000 ; // 6
+			4'b0111: SSD_CATHODES = 7'b0001111 ; // 7
+			4'b1000: SSD_CATHODES = 7'b0000000 ; // 8
+ 			4'b1001: SSD_CATHODES = 7'b0000100 ; // 9
 			4'b1010: SSD_CATHODES = 7'b0001000 ; // A
 			4'b1011: SSD_CATHODES = 7'b1100000 ; // B
 			4'b1100: SSD_CATHODES = 7'b0110001 ; // C
