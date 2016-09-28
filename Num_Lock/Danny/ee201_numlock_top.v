@@ -25,7 +25,8 @@ module ee201_numlock_top (
 		Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0, // 8 LEDs
 		An3, An2, An1, An0,			       // 4 anodes
 		Ca, Cb, Cc, Cd, Ce, Cf, Cg,        // 7 cathodes
-		Dp                                 // Dot Point Cathode on SSDs
+		Dp,                                 // Dot Point Cathode on SSDs
+		BtnL, BtnC, BtnR
 	  );
 
 
@@ -120,7 +121,7 @@ module ee201_numlock_top (
 	// let's form some wire aliases with easier naming (U and Z, for UNO and ZERO) 
 
 // TODO: add the lines to assign your I/O inputs to U and Z
-	assign {U,Z} = /* */;
+	assign {U,Z} = {BtnL, BtnR};
 	
 	
 	// switches used to send the value of a specific state to LD6
