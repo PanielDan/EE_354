@@ -1,0 +1,23 @@
+Danny Pan
+Mackenzie Collins
+GCD Lab Report
+
+2.
+
+We're running the desing at the full 50MHz Clock. We use the debouncers to provide a delay
+to fixes any errors and glitches.
+
+Asumming that in 50MHz, there are 50,000,000 full clock cycles and we're not account for
+debouncing (The debouncer is manually setting the pulse time to 1.342sec).
+
+Then 50,000,000/4 = 12,500,000 times A/B is loaded during one press.
+
+I dvided by 4 because there's 50M clocks in a second, so in 0.25 seconds, there's a fourth of that
+
+3.
+
+I would use a 4-bit counter b/c with 16 individual flipflops, we would need 16 pieces of
+condiitional logic to increment them. We could simply increment the counter everytime we
+enter in a value and let then reset it back to 0 when it reaches 16--or just let it overflow.
+16 Flip Flops take much more space and are more expensive than a simple 4-bit counter that does
+the job. In addition we would waste 16 FFs to use as flags for a single state.
