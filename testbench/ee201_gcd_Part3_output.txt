@@ -1,0 +1,200 @@
+Ain:   1 Bin:   1 GCD:   1
+It took           1 clock(s) to compute the GCD
+Ain:   1 Bin:   2 GCD:   1
+It took           3 clock(s) to compute the GCD
+Ain:   1 Bin:   3 GCD:   1
+It took           4 clock(s) to compute the GCD
+Ain:   1 Bin:   4 GCD:   1
+It took           4 clock(s) to compute the GCD
+Ain:   1 Bin:   5 GCD:   1
+It took           5 clock(s) to compute the GCD
+Ain:   1 Bin:   6 GCD:   1
+It took           5 clock(s) to compute the GCD
+Ain:   1 Bin:   7 GCD:   1
+It took           6 clock(s) to compute the GCD
+Ain:   1 Bin:   8 GCD:   1
+It took           5 clock(s) to compute the GCD
+Ain:   1 Bin:   9 GCD:   1
+It took           6 clock(s) to compute the GCD
+Ain:   1 Bin:  10 GCD:   1
+It took           6 clock(s) to compute the GCD
+Ain:   1 Bin:  11 GCD:   1
+It took           7 clock(s) to compute the GCD
+Ain:   1 Bin:  12 GCD:   1
+It took           6 clock(s) to compute the GCD
+Ain:   1 Bin:  13 GCD:   1
+It took           7 clock(s) to compute the GCD
+Ain:   1 Bin:  14 GCD:   1
+It took           7 clock(s) to compute the GCD
+Ain:   1 Bin:  15 GCD:   1
+It took           8 clock(s) to compute the GCD
+Ain:   1 Bin:  16 GCD:   1
+It took           6 clock(s) to compute the GCD
+Ain:   1 Bin:  17 GCD:   1
+It took           7 clock(s) to compute the GCD
+Ain:   1 Bin:  18 GCD:   1
+It took           7 clock(s) to compute the GCD
+Ain:   1 Bin:  19 GCD:   1
+It took           8 clock(s) to compute the GCD
+Ain:   1 Bin:  20 GCD:   1
+It took           7 clock(s) to compute the GCD
+Ain:   1 Bin:  21 GCD:   1
+It took           8 clock(s) to compute the GCD
+Ain:   1 Bin:  22 GCD:   1
+It took           8 clock(s) to compute the GCD
+Ain:   1 Bin:  23 GCD:   1
+It took           9 clock(s) to compute the GCD
+Ain:   1 Bin:  24 GCD:   1
+It took           7 clock(s) to compute the GCD
+Ain:   1 Bin:  25 GCD:   1
+It took           8 clock(s) to compute the GCD
+Ain:   1 Bin:  26 GCD:   1
+It took           8 clock(s) to compute the GCD
+Ain:   1 Bin:  27 GCD:   1
+It took           9 clock(s) to compute the GCD
+Ain:   1 Bin:  28 GCD:   1
+It took           8 clock(s) to compute the GCD
+Ain:   1 Bin:  29 GCD:   1
+It took           9 clock(s) to compute the GCD
+Ain:   1 Bin:  30 GCD:   1
+It took           9 clock(s) to compute the GCD
+Ain:   1 Bin:  31 GCD:   1
+It took          10 clock(s) to compute the GCD
+Ain:   1 Bin:  32 GCD:   1
+It took           7 clock(s) to compute the GCD
+Ain:   1 Bin:  33 GCD:   1
+It took           8 clock(s) to compute the GCD
+Ain:   1 Bin:  34 GCD:   1
+It took           8 clock(s) to compute the GCD
+Ain:   1 Bin:  35 GCD:   1
+It took           9 clock(s) to compute the GCD
+Ain:   1 Bin:  36 GCD:   1
+It took           8 clock(s) to compute the GCD
+Ain:   1 Bin:  37 GCD:   1
+It took           9 clock(s) to compute the GCD
+Ain:   1 Bin:  38 GCD:   1
+It took           9 clock(s) to compute the GCD
+Ain:   1 Bin:  39 GCD:   1
+It took          10 clock(s) to compute the GCD
+Ain:   1 Bin:  40 GCD:   1
+It took           8 clock(s) to compute the GCD
+Ain:   1 Bin:  41 GCD:   1
+It took           9 clock(s) to compute the GCD
+Ain:   1 Bin:  42 GCD:   1
+It took           9 clock(s) to compute the GCD
+Ain:   1 Bin:  43 GCD:   1
+It took          10 clock(s) to compute the GCD
+Ain:   1 Bin:  44 GCD:   1
+It took           9 clock(s) to compute the GCD
+Ain:   1 Bin:  45 GCD:   1
+It took          10 clock(s) to compute the GCD
+Ain:   1 Bin:  46 GCD:   1
+It took          10 clock(s) to compute the GCD
+Ain:   1 Bin:  47 GCD:   1
+It took          11 clock(s) to compute the GCD
+Ain:   1 Bin:  48 GCD:   1
+It took           8 clock(s) to compute the GCD
+Ain:   1 Bin:  49 GCD:   1
+It took           9 clock(s) to compute the GCD
+Ain:   1 Bin:  50 GCD:   1
+It took           9 clock(s) to compute the GCD
+Ain:   1 Bin:  51 GCD:   1
+It took          10 clock(s) to compute the GCD
+Ain:   1 Bin:  52 GCD:   1
+It took           9 clock(s) to compute the GCD
+Ain:   1 Bin:  53 GCD:   1
+It took          10 clock(s) to compute the GCD
+Ain:   1 Bin:  54 GCD:   1
+It took          10 clock(s) to compute the GCD
+Ain:   1 Bin:  55 GCD:   1
+It took          11 clock(s) to compute the GCD
+Ain:   1 Bin:  56 GCD:   1
+It took           9 clock(s) to compute the GCD
+Ain:   1 Bin:  57 GCD:   1
+It took          10 clock(s) to compute the GCD
+Ain:   1 Bin:  58 GCD:   1
+It took          10 clock(s) to compute the GCD
+Ain:   1 Bin:  59 GCD:   1
+It took          11 clock(s) to compute the GCD
+Ain:   2 Bin:   1 GCD:   1
+It took           2 clock(s) to compute the GCD
+Ain:   2 Bin:   2 GCD:   2
+It took           1 clock(s) to compute the GCD
+Ain:   2 Bin:   3 GCD:   1
+It took           5 clock(s) to compute the GCD
+Ain:   2 Bin:   4 GCD:   2
+It took           5 clock(s) to compute the GCD
+Ain:   2 Bin:   5 GCD:   1
+It took           6 clock(s) to compute the GCD
+Ain:   2 Bin:   6 GCD:   2
+It took           6 clock(s) to compute the GCD
+Ain:   2 Bin:   7 GCD:   1
+It took           7 clock(s) to compute the GCD
+Ain:   2 Bin:   8 GCD:   2
+It took           6 clock(s) to compute the GCD
+Ain:   2 Bin:   9 GCD:   1
+It took           7 clock(s) to compute the GCD
+Ain:   2 Bin:  10 GCD:   2
+It took           7 clock(s) to compute the GCD
+Ain:   2 Bin:  11 GCD:   1
+It took           8 clock(s) to compute the GCD
+Ain:   2 Bin:  12 GCD:   2
+It took           7 clock(s) to compute the GCD
+Ain:   2 Bin:  13 GCD:   1
+It took           8 clock(s) to compute the GCD
+Ain:   2 Bin:  14 GCD:   2
+It took           8 clock(s) to compute the GCD
+Ain:   2 Bin:  15 GCD:   1
+It took           9 clock(s) to compute the GCD
+Ain:   2 Bin:  16 GCD:   2
+It took           7 clock(s) to compute the GCD
+Ain:   2 Bin:  17 GCD:   1
+It took           8 clock(s) to compute the GCD
+Ain:   2 Bin:  18 GCD:   2
+It took           8 clock(s) to compute the GCD
+Ain:   2 Bin:  19 GCD:   1
+It took           9 clock(s) to compute the GCD
+Ain:   2 Bin:  20 GCD:   2
+It took           8 clock(s) to compute the GCD
+Ain:   2 Bin:  21 GCD:   1
+It took           9 clock(s) to compute the GCD
+Ain:   2 Bin:  22 GCD:   2
+It took           9 clock(s) to compute the GCD
+Ain:   2 Bin:  23 GCD:   1
+It took          10 clock(s) to compute the GCD
+Ain:   2 Bin:  24 GCD:   2
+It took           8 clock(s) to compute the GCD
+Ain:   2 Bin:  25 GCD:   1
+It took           9 clock(s) to compute the GCD
+Ain:   2 Bin:  26 GCD:   2
+It took           9 clock(s) to compute the GCD
+Ain:   2 Bin:  27 GCD:   1
+It took          10 clock(s) to compute the GCD
+Ain:   2 Bin:  28 GCD:   2
+It took           9 clock(s) to compute the GCD
+Ain:   2 Bin:  29 GCD:   1
+It took          10 clock(s) to compute the GCD
+Ain:   2 Bin:  30 GCD:   2
+It took          10 clock(s) to compute the GCD
+Ain:   2 Bin:  31 GCD:   1
+It took          11 clock(s) to compute the GCD
+Ain:   2 Bin:  32 GCD:   2
+It took           8 clock(s) to compute the GCD
+Ain:   2 Bin:  33 GCD:   1
+It took           9 clock(s) to compute the GCD
+Ain:   2 Bin:  34 GCD:   2
+It took           9 clock(s) to compute the GCD
+Ain:   2 Bin:  35 GCD:   1
+It took          10 clock(s) to compute the GCD
+Ain:   2 Bin:  36 GCD:   2
+It took           9 clock(s) to compute the GCD
+Ain:   2 Bin:  37 GCD:   1
+It took          10 clock(s) to compute the GCD
+Ain:   2 Bin:  38 GCD:   2
+It took          10 clock(s) to compute the GCD
+Ain:   2 Bin:  39 GCD:   1
+It took          11 clock(s) to compute the GCD
+Ain:   2 Bin:  40 GCD:   2
+It took           9 clock(s) to compute the GCD
+Ain:   2 Bin:  41 GCD:   1
+It took          10 clock(s) to compute the GCD
